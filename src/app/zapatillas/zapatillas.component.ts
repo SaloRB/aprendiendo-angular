@@ -8,17 +8,30 @@ import { Zapatilla } from "../models/zapatilla";
 export class ZapatillasComponent implements OnInit {
     public titulo: string = "Componente de zapatillas"
     public zapatillas: Array<Zapatilla>;
+    public marcas: String[];
+    public color: string;
 
     constructor() {
+        this.color = 'yellow';
+        this.marcas = new Array();
         this.zapatillas = [
-            new Zapatilla('Nike Airmax', 'Nike', 'Rojo', 190, true),
+            new Zapatilla('Nike Air Max', 'Nike', 'Rojo', 190, true),
             new Zapatilla('Reebok Classic', 'Reebok', 'Blanco', 80, true),
+            new Zapatilla('Reebok Spartan', 'Reebok', 'Azul', 40, true),
             new Zapatilla('Nike Runner MD', 'Nike', 'Negro', 60, true),
             new Zapatilla('Adidas Yeezy', 'Adidas', 'Gris', 180, false)
         ];
     }
 
     ngOnInit() {
-        console.log(this.zapatillas);
+        this.getMarcas();
+    }
+
+    getMarcas() {
+        this.zapatillas.forEach((zapatilla, index) => {
+            if (this.marcas.indexOf(zapatilla.marca) < 0) {
+                this.marcas.push(zapatilla.marca);
+            }
+        });
     }
 }
