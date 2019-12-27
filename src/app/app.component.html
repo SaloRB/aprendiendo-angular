@@ -16,17 +16,12 @@
     &nbsp;
     <a [routerLink]="['/videojuego']" [routerLinkActive]="['active']">Videojuegos</a>
     &nbsp;
-    <a [routerLink]="['/externo']" [routerLinkActive]="['active']">Externo</a>    
+    <a [routerLink]="['/externo']" [routerLinkActive]="['active']">Externo</a>
+    &nbsp;
+    <a [routerLink]="['/contacto']" [routerLinkActive]="['active']">Contacto</a>
   </nav>
 
   <hr>
-
-  <!-- <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
-  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
-
-  <videojuego *ngIf="mostrar_videojuegos"></videojuego> -->
-
-  <!-- <zapatillas></zapatillas> -->
 
   <router-outlet></router-outlet>
 </div>
